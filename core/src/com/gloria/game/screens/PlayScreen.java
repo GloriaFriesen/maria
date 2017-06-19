@@ -1,6 +1,7 @@
 package com.gloria.game.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -24,6 +25,7 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.gloria.game.Maria;
 import com.gloria.game.scenes.Hud;
+import com.gloria.game.sprites.MariaSprite;
 
 public class PlayScreen implements Screen {
     private Maria game;
@@ -35,32 +37,34 @@ public class PlayScreen implements Screen {
     private OrthogonalTiledMapRenderer renderer;
     private World world;
     private Box2DDebugRenderer b2dr;
+    private MariaSprite player;
 
     public PlayScreen(Maria game) {
         this.game = game;
         gameCam = new OrthographicCamera();
-        gamePort = new FitViewport(Maria.V_WIDTH, Maria.V_HEIGHT, gameCam);
+        gamePort = new FitViewport(Maria.V_WIDTH / Maria.PPM, Maria.V_HEIGHT / Maria.PPM, gameCam);
         hud = new Hud(game.batch);
         maploader = new TmxMapLoader();
         map = maploader.load("maria.tmx");
-        renderer = new OrthogonalTiledMapRenderer(map);
+        renderer = new OrthogonalTiledMapRenderer(map, 1 / Maria.PPM);
         gameCam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
         world = new World(new Vector2(0, 0), true);
         b2dr = new Box2DDebugRenderer();
+        player = new MariaSprite(world);
 
         BodyDef bodyDef = new BodyDef();
         PolygonShape shape = new PolygonShape();
         FixtureDef fixtureDef = new FixtureDef();
         Body body;
 
-        //ground fixutre
+        //ground fixture
         for (MapObject object : map.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
             bodyDef.type = BodyDef.BodyType.StaticBody;
-            bodyDef.position.set(rectangle.getX() + rectangle.getWidth() / 2, rectangle.getY() + rectangle.getHeight() / 2);
+            bodyDef.position.set((rectangle.getX() + rectangle.getWidth() / 2) / Maria.PPM, (rectangle.getY() + rectangle.getHeight() / 2) / Maria.PPM);
 
             body = world.createBody(bodyDef);
-            shape.setAsBox(rectangle.getWidth() / 2, rectangle.getHeight() / 2);
+            shape.setAsBox(rectangle.getWidth() / 2 / Maria.PPM, rectangle.getHeight() / 2 / Maria.PPM);
             fixtureDef.shape = shape;
             body.createFixture(fixtureDef);
         }
@@ -69,10 +73,10 @@ public class PlayScreen implements Screen {
         for (MapObject object : map.getLayers().get(3).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
             bodyDef.type = BodyDef.BodyType.StaticBody;
-            bodyDef.position.set(rectangle.getX() + rectangle.getWidth() / 2, rectangle.getY() + rectangle.getHeight() / 2);
+            bodyDef.position.set((rectangle.getX() + rectangle.getWidth() / 2) / Maria.PPM, (rectangle.getY() + rectangle.getHeight() / 2) / Maria.PPM);
 
             body = world.createBody(bodyDef);
-            shape.setAsBox(rectangle.getWidth() / 2, rectangle.getHeight() / 2);
+            shape.setAsBox(rectangle.getWidth() / 2 / Maria.PPM, rectangle.getHeight() / 2 / Maria.PPM);
             fixtureDef.shape = shape;
             body.createFixture(fixtureDef);
         }
@@ -81,10 +85,10 @@ public class PlayScreen implements Screen {
         for (MapObject object : map.getLayers().get(2).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
             bodyDef.type = BodyDef.BodyType.StaticBody;
-            bodyDef.position.set(rectangle.getX() + rectangle.getWidth() / 2, rectangle.getY() + rectangle.getHeight() / 2);
+            bodyDef.position.set((rectangle.getX() + rectangle.getWidth() / 2) / Maria.PPM, (rectangle.getY() + rectangle.getHeight() / 2) / Maria.PPM);
 
             body = world.createBody(bodyDef);
-            shape.setAsBox(rectangle.getWidth() / 2, rectangle.getHeight() / 2);
+            shape.setAsBox(rectangle.getWidth() / 2 / Maria.PPM, rectangle.getHeight() / 2 / Maria.PPM);
             fixtureDef.shape = shape;
             body.createFixture(fixtureDef);
         }
@@ -96,13 +100,21 @@ public class PlayScreen implements Screen {
     }
 
     public void handleInput(float delta) {
-        if (Gdx.input.isTouched())
-            gameCam.position.y += 100 * delta;
+        if (Gdx.input.isKeyJustPressed(Input.Keys.UP))
+            player.b2body.applyLinearImpulse(new Vector2(0, 4f), player.b2body.getWorldCenter(), true);
+        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <= 2)
+            player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
+        if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >= -2)
+            player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
+
     }
 
     public void update(float delta) {
         handleInput(delta);
+        world.step(1/10f, 6, 2);
 
+        gameCam.position.x = player.b2body.getPosition().x;
+        gameCam.position.y = player.b2body.getPosition().y;
         gameCam.update();
         renderer.setView(gameCam);
     }
@@ -111,7 +123,7 @@ public class PlayScreen implements Screen {
     public void render(float delta) {
         update(delta);
 
-        Gdx.gl.glClearColor(1, 0, 0, 1);
+        Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         renderer.render();
