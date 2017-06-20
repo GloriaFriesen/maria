@@ -24,6 +24,7 @@ import com.gloria.game.Maria;
 import com.gloria.game.scenes.Hud;
 import com.gloria.game.sprites.MariaSprite;
 import com.gloria.game.tools.B2WorldCreator;
+import com.gloria.game.tools.WorldContactListener;
 
 public class PlayScreen implements Screen {
     private Maria game;
@@ -52,6 +53,7 @@ public class PlayScreen implements Screen {
         b2dr = new Box2DDebugRenderer();
         new B2WorldCreator(world, map);
         player = new MariaSprite(world, this);
+        world.setContactListener(new WorldContactListener());
     }
 
     public TextureAtlas getAtlas() {

@@ -4,9 +4,11 @@ package com.gloria.game.sprites;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
+import com.badlogic.gdx.physics.box2d.EdgeShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
@@ -111,5 +113,12 @@ public class MariaSprite extends Sprite {
 
         fixtureDef.shape = shape;
         b2body.createFixture(fixtureDef);
+
+        EdgeShape head = new EdgeShape();
+        head.set(new Vector2(-2 / Maria.PPM, 9 / Maria.PPM), new Vector2(2 / Maria.PPM, 9 / Maria.PPM));
+        fixtureDef.shape = head;
+        fixtureDef.isSensor = true;
+
+        b2body.createFixture(fixtureDef).setUserData("head");
     }
 }
