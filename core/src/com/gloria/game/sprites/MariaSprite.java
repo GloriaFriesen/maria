@@ -88,19 +88,20 @@ public class MariaSprite extends Sprite {
     }
 
     public State getState() {
-        if (b2body.getLinearVelocity().y > 0)
-            return State.JUMPING;
-        else if (b2body.getLinearVelocity().y < 0)
+        if(b2body.getLinearVelocity().y > 0 || (b2body.getLinearVelocity().y < 0 && previousState == State.JUMPING) )
+            return  State.JUMPING;
+        else if(b2body.getLinearVelocity().y < 0)
             return State.FALLING;
-        else if (b2body.getLinearVelocity().x != 0)
+        else if(b2body.getLinearVelocity().x != 0)
             return State.RUNNING;
         else
             return State.STANDING;
+
     }
 
     public void defineMaria(){
         BodyDef bodyDef = new BodyDef();
-        bodyDef.position.set(16 / Maria.PPM, 16 / Maria.PPM);
+        bodyDef.position.set(64 / Maria.PPM, 64 / Maria.PPM);
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         b2body = world.createBody(bodyDef);
 

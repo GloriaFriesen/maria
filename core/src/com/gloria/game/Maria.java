@@ -9,11 +9,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.gloria.game.screens.PlayScreen;
 
 public class Maria extends Game {
-	public static final int V_WIDTH = 400;
-	public static final int V_HEIGHT = 208;
-	public static final float PPM = 100;
-
+	public static final int V_WIDTH = 700;
+	public static final int V_HEIGHT = 500;
 	public SpriteBatch batch;
+	public static final float PPM = 64;
 
 	@Override
 	public void create () {
