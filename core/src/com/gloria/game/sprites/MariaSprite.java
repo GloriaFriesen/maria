@@ -110,6 +110,8 @@ public class MariaSprite extends Sprite {
         FixtureDef fixtureDef = new FixtureDef();
         CircleShape shape = new CircleShape();
         shape.setRadius(6 / Maria.PPM);
+        fixtureDef.filter.categoryBits = Maria.MARIA_BIT;
+        fixtureDef.filter.maskBits = Maria.DEFAULT_BIT | Maria.BRICK_BIT;
 
         fixtureDef.shape = shape;
         b2body.createFixture(fixtureDef);

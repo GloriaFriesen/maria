@@ -14,6 +14,11 @@ public class Maria extends Game {
 	public SpriteBatch batch;
 	public static final float PPM = 64;
 
+	public static final short DEFAULT_BIT = 1;
+	public static final short MARIA_BIT = 2;
+	public static final short BRICK_BIT = 4;
+	public static final short DESTROYED_BIT = 8;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
