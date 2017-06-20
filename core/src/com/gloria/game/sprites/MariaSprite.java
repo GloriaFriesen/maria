@@ -20,7 +20,7 @@ public class MariaSprite extends Sprite {
 
     public void defineMaria(){
         BodyDef bodyDef = new BodyDef();
-        bodyDef.position.set(32 / Maria.PPM, 32 / Maria.PPM);
+        bodyDef.position.set(16 / Maria.PPM, 16 / Maria.PPM);
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         b2body = world.createBody(bodyDef);
 
