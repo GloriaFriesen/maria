@@ -12,7 +12,6 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.gloria.game.Maria;
 import com.gloria.game.screens.PlayScreen;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 public class MariaSprite extends Sprite {
     public enum State { FALLING, JUMPING, STANDING, RUNNING };
@@ -35,7 +34,7 @@ public class MariaSprite extends Sprite {
         runningRight = true;
 
         Array<TextureRegion> frames = new Array<TextureRegion>();
-        for (int i = 8; i < 6; i++)
+        for (int i = 8; i < 14; i++)
             frames.add(new TextureRegion(getTexture(), i * 32, 0, 32, 32));
         mariaRun = new Animation<TextureRegion>(0.1f, frames);
         frames.clear();
@@ -79,6 +78,13 @@ public class MariaSprite extends Sprite {
             region.flip(true, false);
             runningRight = false;
         }
+        else if ((b2body.getLinearVelocity().x > 0 || runningRight) && region.isFlipX()) {
+            region.flip(true, false);
+            runningRight = true;
+        }
+        stateTimer = currentState == previousState ? stateTimer + delta : 0;
+        previousState = currentState;
+        return region;
     }
 
     public State getState() {
