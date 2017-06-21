@@ -8,17 +8,17 @@
  </layer>
  <layer name="Tile Layer 2" width="42" height="600">
   <data encoding="base64" compression="zlib">
-   eJzt20luFDEUANBK1L1oxDbDDRguAsmBkJC4BMMh2DLcgOEQbAPcgGGJs8RKVOXyWNF70l9UkpKj+Nv+v+VMEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANx9L4+m6VWI1yHeHNV7J9enMM7nEF9CfF045pp3cv0K4/wO8SfE34VjrnknljonD46n6WGIRyEeHy8bY807sR5zskaJOWmhxJwA5bzbTdP7EB9CfNylP7dyFcb6HuJHiJ+79OdWTvbTdBriLMT5Pv25lSdhrKchLkJc7tOfIVevvSRVrb2kdG9Say8pXQfX2kt618FL57N3HayvKav3fI6ux2cwa1gXZZVaF6V7klr5WLonqZWPpXuSWvlYuifZ6j6dmq+96urUfO3Vo6fma68ePTVft96jz+Vtal7XWgdzeZua17XWwVzepuZ1rXUwl7epeR3/fK28KV1H1Mqb0nVErbwpXUfk5s1tlu7L+p6y9D3r+p7a9WCpvqd2PViq76ldD5bqe7ZeD25Fq34r9zxp1W/lniet+q3c86TV+trq5xZbN0q/OWeUfnPOKP3mnFp9w21GvXMTG/XOTWzUOzexUe/cxHXGqH1sXGf07GNPQ5yFOL/he3Gd0buPvQhxecPX4zpjhLrjRZ9h75RRzo85o5wfc0Y5P+Zspf/PvYPcqn7KvYNcq36Kz+fcO8i16qf4fM69g1yrforP56vlr/6ndt0Un88nK8doWTc9O4R5WTlGy7rp7WH9vOfWTSn71bfD+nnPlbJf3b+3ft5zpexX13/P551+z5T96vrvuTY/U+Wet63yM/e8bZWfuedtq/z0P0LcZf8Aq/TKsQ==
+   eJzt20luFDEUANBKlCyC2Ga4AcNFIDkQEhKXYDgEW4YbMBwgS7YBbsCwxNkFk1Dt2R29J/1FJSm51P5l/99ylgUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABuv+c7y/IixMsQr3ba3VPqQxjnY4hPIT5vOGbOPaV+hHF+hvgV4veGY+bcE0udk3u7y3I/xIMQD3c3GyPnntiIOclRY056qDEnQD1v9pblbYh3Id7vpV/3chHG+hriW4jve+nXvRzuL8tRiOMQJ/vp1708CmM9DnEa4mw//RpKjVpLUrVaS2r3Jq3Wktp1cKu1ZHQdfH4l/jefo+vg8yhmdfUZZ+5rrj6nvuZfI76DyaHfr6vWOle7J2mVj7V7klb5WLsnaZWPtXuS0fturtR8HVVXp+brqB49NV9H9eip+brtPfpa3qbmdav3YC1vU/O61Xuwlreped3qPVjL29S8jv++Vd7UriNa5U3tOqJV3tSuI0rz5iabrsv6nrr0PXl9T+t6sFbf07oerNX3tK4Ha/U9214Pbote/VbpftKr3yrdT3r1W6X7Sa/3a1u/t9h2s/Sba2bpN9fM0m+uadU33GTWMzexWc/cxGY9cxOb9cxNXGfM2sfGdcbIPvYoxHGIk2t+F9cZo/vY0xBn1/w8rjNmqDuejRn2Vpll/1gzy/6xZpb9Y8229P+lZ5B71U+lZ5Bb1U/x/lx6BrlV/RTvz6VnkFvVT/H+fLH5rX9pXTfF+/Nh5hg966YnB2FeMsfoWTe9Psif99K6KWW9+nKQP++lUtaru3fy571Uynp1+Xk+HfScKevV5eeZm5+pSvfbXvlZut/2ys/S/bZXfvofIW6zP+QFzSk=
   </data>
  </layer>
- <objectgroup name="edge">
+ <objectgroup name="edge" visible="0">
   <object id="39" x="1" y="9359" width="1" height="173"/>
-  <object id="41" x="669.5" y="9375.5" width="1" height="92"/>
+  <object id="41" x="669.5" y="9007.5" width="1" height="460"/>
   <object id="43" x="668" y="9073" width="2" height="237" visible="0"/>
   <object id="44" x="669" y="1.5" width="1" height="9005"/>
   <object id="45" x="-0.5" y="0" width="1" height="9230"/>
  </objectgroup>
- <objectgroup name="steps">
+ <objectgroup name="steps" visible="0">
   <object id="4" x="0" y="9231" width="62" height="127"/>
   <object id="19" x="415" y="9471.5" width="255" height="63"/>
   <object id="20" x="480" y="9408.5" width="62" height="63"/>
@@ -39,7 +39,7 @@
   <object id="55" x="1" y="8319.5" width="62" height="63"/>
   <object id="56" x="113" y="8208.5" width="253" height="63"/>
  </objectgroup>
- <objectgroup name="brick">
+ <objectgroup name="brick" visible="0">
   <object id="26" x="128" y="9135" width="63" height="63"/>
   <object id="29" x="191.5" y="9135.5" width="63" height="63"/>
   <object id="30" x="255.5" y="8928.5" width="63" height="63"/>
@@ -56,7 +56,7 @@
   <object id="64" x="479.5" y="8063.5" width="63" height="63"/>
   <object id="65" x="0.5" y="8031.5" width="63" height="63"/>
  </objectgroup>
- <objectgroup name="ground">
+ <objectgroup name="ground" visible="0">
   <object id="35" x="-1" y="9534" width="671" height="64"/>
  </objectgroup>
 </map>
