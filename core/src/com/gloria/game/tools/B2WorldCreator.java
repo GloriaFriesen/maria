@@ -33,6 +33,18 @@ public class B2WorldCreator {
             body.createFixture(fixtureDef);
         }
 
+        //edge fixture
+        for (MapObject object : map.getLayers().get(2).getObjects().getByType(RectangleMapObject.class)) {
+            Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
+            bodyDef.type = BodyDef.BodyType.StaticBody;
+            bodyDef.position.set((rectangle.getX() + rectangle.getWidth() / 2) / Maria.PPM, (rectangle.getY() + rectangle.getHeight() / 2) / Maria.PPM);
+
+            body = world.createBody(bodyDef);
+            shape.setAsBox(rectangle.getWidth() / 2 / Maria.PPM, rectangle.getHeight() / 2 / Maria.PPM);
+            fixtureDef.shape = shape;
+            body.createFixture(fixtureDef);
+        }
+
         //brick fixture
         for (MapObject object : map.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
