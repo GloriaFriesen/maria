@@ -11,7 +11,10 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Array;
 import com.gloria.game.Maria;
+
+import java.util.ArrayList;
 
 public abstract class InteractiveTileObject {
     protected World world;
@@ -20,6 +23,7 @@ public abstract class InteractiveTileObject {
     protected Rectangle bounds;
     protected Body body;
     protected Fixture fixture;
+    protected ArrayList<TiledMapTileLayer.Cell> cells = new ArrayList<TiledMapTileLayer.Cell>();
 
     public InteractiveTileObject(World world, TiledMap map, Rectangle bounds) {
         this.world = world;
@@ -48,9 +52,26 @@ public abstract class InteractiveTileObject {
         fixture.setFilterData(filter);
     }
 
-    public TiledMapTileLayer.Cell getCell() {
+    public ArrayList<TiledMapTileLayer.Cell> getCells() {
         TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(1);
-        return layer.getCell((int)(body.getPosition().x * Maria.PPM / 16),
-                (int)(body.getPosition().y * Maria.PPM / 16));
+        int xCoordinate = (int) (body.getPosition().x * Maria.PPM / 16);
+        int yCoordinate = (int) (body.getPosition().y * Maria.PPM / 16);
+        cells.add(layer.getCell(xCoordinate, yCoordinate));
+        cells.add(layer.getCell(xCoordinate + 1, yCoordinate));
+        cells.add(layer.getCell(xCoordinate + 2, yCoordinate));
+        cells.add(layer.getCell(xCoordinate - 1, yCoordinate));
+        cells.add(layer.getCell(xCoordinate, yCoordinate + 1));
+        cells.add(layer.getCell(xCoordinate, yCoordinate - 1));
+        cells.add(layer.getCell(xCoordinate, yCoordinate - 2));
+        cells.add(layer.getCell(xCoordinate - 1, yCoordinate + 1));
+        cells.add(layer.getCell(xCoordinate - 1, yCoordinate - 1));
+        cells.add(layer.getCell(xCoordinate - 1, yCoordinate - 2));
+        cells.add(layer.getCell(xCoordinate + 1, yCoordinate + 1));
+        cells.add(layer.getCell(xCoordinate + 1, yCoordinate - 1));
+        cells.add(layer.getCell(xCoordinate + 1, yCoordinate - 2));
+        cells.add(layer.getCell(xCoordinate + 2, yCoordinate + 1));
+        cells.add(layer.getCell(xCoordinate + 2, yCoordinate - 1));
+        cells.add(layer.getCell(xCoordinate + 2, yCoordinate - 2));
+        return cells;
     }
 }
