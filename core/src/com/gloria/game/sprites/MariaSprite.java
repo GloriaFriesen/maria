@@ -54,7 +54,7 @@ public class MariaSprite extends Sprite {
     }
 
     public void update(float delta) {
-        setPosition(b2body.getPosition().x - getWidth() / 2, b2body.getPosition().y - getHeight() / 2);
+        setPosition(b2body.getPosition().x - getWidth() / 2, b2body.getPosition().y - getHeight() / 3);
         setRegion(getFrame(delta));
     }
 
@@ -109,7 +109,7 @@ public class MariaSprite extends Sprite {
 
         FixtureDef fixtureDef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(6 / Maria.PPM);
+        shape.setRadius(5 / Maria.PPM);
         fixtureDef.filter.categoryBits = Maria.MARIA_BIT;
         fixtureDef.filter.maskBits = Maria.DEFAULT_BIT | Maria.BRICK_BIT;
 
