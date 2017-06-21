@@ -49,7 +49,7 @@ public class PlayScreen implements Screen {
         map = maploader.load("maria.tmx");
         renderer = new OrthogonalTiledMapRenderer(map, 1 / Maria.PPM);
         gameCam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
-        world = new World(new Vector2(0, -4), true);
+        world = new World(new Vector2(0, -13), true);
         b2dr = new Box2DDebugRenderer();
         new B2WorldCreator(world, map);
         player = new MariaSprite(world, this);
@@ -66,8 +66,8 @@ public class PlayScreen implements Screen {
     }
 
     public void handleInput(float delta) {
-        if (Gdx.input.isKeyJustPressed(Input.Keys.UP))
-            player.b2body.applyLinearImpulse(new Vector2(0, 5f), player.b2body.getWorldCenter(), true);
+        if (Gdx.input.isKeyPressed(Input.Keys.UP))
+            player.b2body.applyLinearImpulse(new Vector2(0, 2f), player.b2body.getWorldCenter(), true);
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <= 2)
             player.b2body.applyLinearImpulse(new Vector2(.5f, 0), player.b2body.getWorldCenter(), true);
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >= -2)
