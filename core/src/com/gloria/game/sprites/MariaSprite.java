@@ -36,12 +36,12 @@ public class MariaSprite extends Sprite {
         runningRight = true;
 
         Array<TextureRegion> frames = new Array<TextureRegion>();
-        for (int i = 8; i < 14; i++)
+        for (int i = 1; i < 14; i++)
             frames.add(new TextureRegion(getTexture(), i * 32, 0, 32, 32));
         mariaRun = new Animation<TextureRegion>(0.1f, frames);
         frames.clear();
 
-        for (int i = 1; i < 7; i++)
+        for (int i = 1; i < 14; i++)
             frames.add(new TextureRegion(getTexture(), i * 32, 0, 32, 32));
         mariaJump = new Animation<TextureRegion>(0.1f, frames);
         frames.clear();
@@ -122,5 +122,12 @@ public class MariaSprite extends Sprite {
         fixtureDef.isSensor = true;
 
         b2body.createFixture(fixtureDef).setUserData("head");
+    }
+
+    public void jump(){
+        if ( currentState != State.JUMPING ) {
+            b2body.applyLinearImpulse(new Vector2(0, 6f), b2body.getWorldCenter(), true);
+            currentState = State.JUMPING;
+        }
     }
 }
