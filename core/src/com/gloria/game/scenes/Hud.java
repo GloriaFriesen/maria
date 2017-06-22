@@ -24,13 +24,13 @@ public class Hud implements Disposable{
     private float timeCount;
     private static Integer score;
 
-    private static Label scoreLabel;
+    public static Label scoreLabel;
     private Label scoreTitleLabel;
     private Label timeLabel;
     private Label countdownLabel;
 
     public Hud(SpriteBatch spriteBatch) {
-        worldTimer = 3;
+        worldTimer = 30;
         timeCount = 0;
         score = 0;
 

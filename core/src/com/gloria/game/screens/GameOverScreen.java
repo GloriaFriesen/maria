@@ -11,9 +11,11 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.gloria.game.Maria;
+import com.gloria.game.scenes.Hud;
 
 import javax.swing.text.TabExpander;
 
@@ -24,7 +26,7 @@ public class GameOverScreen implements Screen {
 
     public GameOverScreen(Game game) {
         this.game = game;
-        viewport = new FitViewport(Maria.V_WIDTH, Maria.V_HEIGHT, new OrthographicCamera());
+        viewport = new FillViewport(Maria.V_WIDTH, Maria.V_HEIGHT, new OrthographicCamera());
         stage = new Stage(viewport, ((Maria) game).batch);
 
         Label.LabelStyle font = new Label.LabelStyle(new BitmapFont(), Color.WHITE);
@@ -36,10 +38,15 @@ public class GameOverScreen implements Screen {
         Label whoopsLabel = new Label("Whoops.", font);
         Label outOfTime = new Label("You ran out of time.", font);
         Label playAgainLabel = new Label("Click to Play Again.", font);
+        Label totalScoreLabel = new Label("Final Score: ", font);
 
         table.add(whoopsLabel).expandX();
         table.row();
         table.add(outOfTime).expandX();
+        table.row();
+        table.add(totalScoreLabel).expandX();
+        table.row();
+        table.add(Hud.scoreLabel).expandX();
         table.row();
         table.add(playAgainLabel).expandX().padTop(40);
 
