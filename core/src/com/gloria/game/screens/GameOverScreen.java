@@ -33,8 +33,11 @@ public class GameOverScreen implements Screen {
         table.center();
         table.setFillParent(true);
 
-        Label gameOverLabel = new Label("Game Over", font);
-        table.add(gameOverLabel).expandX();
+        Label whoopsLabel = new Label("Whoops.", font);
+        Label outOfTime = new Label("You ran out of time.", font);
+        table.add(whoopsLabel).expandX();
+        table.row();
+        table.add(outOfTime).expandX();
 
         stage.addActor(table);
     }
