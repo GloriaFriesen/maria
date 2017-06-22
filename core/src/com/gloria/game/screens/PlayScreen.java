@@ -5,20 +5,14 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-
 import com.badlogic.gdx.math.Vector2;
-
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.gloria.game.Maria;
 import com.gloria.game.scenes.Hud;
@@ -35,7 +29,6 @@ public class PlayScreen implements Screen {
     private TiledMap map;
     private OrthogonalTiledMapRenderer renderer;
     private World world;
-    private Box2DDebugRenderer b2dr;
     private MariaSprite player;
     private TextureAtlas atlas;
 
@@ -43,14 +36,13 @@ public class PlayScreen implements Screen {
         atlas = new TextureAtlas("ninjacat.txt");
         this.game = game;
         gameCam = new OrthographicCamera();
-        gamePort = new FitViewport(Maria.V_WIDTH / Maria.PPM, Maria.V_HEIGHT / Maria.PPM, gameCam);
+        gamePort = new FillViewport(Maria.V_WIDTH / Maria.PPM, Maria.V_HEIGHT / Maria.PPM, gameCam);
         hud = new Hud(game.batch);
         maploader = new TmxMapLoader();
         map = maploader.load("maria.tmx");
         renderer = new OrthogonalTiledMapRenderer(map, 1 / Maria.PPM);
         gameCam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
-        world = new World(new Vector2(0, -6), true);
-        b2dr = new Box2DDebugRenderer();
+        world = new World(new Vector2(0, -4), true);
         new B2WorldCreator(world, map);
         player = new MariaSprite(world, this);
         world.setContactListener(new WorldContactListener());
@@ -68,7 +60,6 @@ public class PlayScreen implements Screen {
     public void handleInput(float delta) {
         if (Gdx.input.isKeyPressed(Input.Keys.UP) && player.b2body.getLinearVelocity().y <= 1)
             player.jump();
-//            player.b2body.applyLinearImpulse(new Vector2(0, 4f), player.b2body.getWorldCenter(), true);
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <= 2)
             player.b2body.applyLinearImpulse(new Vector2(.2f, 0), player.b2body.getWorldCenter(), true);
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >= -2)
@@ -94,7 +85,6 @@ public class PlayScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         renderer.render();
-        b2dr.render(world, gameCam.combined);
 
         game.batch.setProjectionMatrix(gameCam.combined);
         game.batch.begin();
@@ -142,7 +132,6 @@ public class PlayScreen implements Screen {
         map.dispose();
         renderer.dispose();
         world.dispose();
-        b2dr.dispose();
         hud.dispose();
     }
 }

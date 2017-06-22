@@ -130,7 +130,7 @@ public class MariaSprite extends Sprite {
 
     public void jump(){
         if ( currentState != State.JUMPING ) {
-            b2body.applyLinearImpulse(new Vector2(0, 6f), b2body.getWorldCenter(), true);
+            b2body.applyLinearImpulse(new Vector2(0, 5f), b2body.getWorldCenter(), true);
             currentState = State.JUMPING;
         }
     }
