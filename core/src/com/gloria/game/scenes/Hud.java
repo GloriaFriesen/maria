@@ -20,7 +20,7 @@ import com.gloria.game.Maria;
 public class Hud implements Disposable{
     public Stage stage;
     private Viewport viewport;
-    private Integer worldTimer;
+    public static Integer worldTimer;
     private float timeCount;
     private static Integer score;
 
@@ -30,7 +30,7 @@ public class Hud implements Disposable{
     private Label countdownLabel;
 
     public Hud(SpriteBatch spriteBatch) {
-        worldTimer = 300;
+        worldTimer = 3;
         timeCount = 0;
         score = 0;
 
