@@ -30,4 +30,12 @@ public class Maria extends Game {
 		super.render();
 	}
 
+//	public boolean isDead() {
+//		return mariaIsDead;
+//	}
+//
+//	public float getTimer() {
+//		return worldTimer;
+//	}
+
 }

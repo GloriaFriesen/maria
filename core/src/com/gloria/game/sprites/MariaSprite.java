@@ -13,10 +13,11 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.gloria.game.Maria;
+import com.gloria.game.scenes.Hud;
 import com.gloria.game.screens.PlayScreen;
 
 public class MariaSprite extends Sprite {
-    public enum State { FALLING, JUMPING, STANDING, RUNNING };
+    public enum State { FALLING, JUMPING, STANDING, RUNNING, DEAD };
     public State currentState;
     public State previousState;
     public World world;
@@ -26,6 +27,7 @@ public class MariaSprite extends Sprite {
     private Animation<TextureRegion> mariaJump;
     private boolean runningRight;
     private float stateTimer;
+    private boolean mariaIsDead;
 
     public MariaSprite(World world, PlayScreen screen) {
         super(screen.getAtlas().findRegion("idle"));
@@ -90,7 +92,9 @@ public class MariaSprite extends Sprite {
     }
 
     public State getState() {
-        if(b2body.getLinearVelocity().y > 0 || (b2body.getLinearVelocity().y < 0 && previousState == State.JUMPING) )
+        if (timeUp())
+            return State.DEAD;
+        else if(b2body.getLinearVelocity().y > 0 || (b2body.getLinearVelocity().y < 0 && previousState == State.JUMPING) )
             return  State.JUMPING;
         else if(b2body.getLinearVelocity().y < 0)
             return State.FALLING;
@@ -129,5 +133,11 @@ public class MariaSprite extends Sprite {
             b2body.applyLinearImpulse(new Vector2(0, 6f), b2body.getWorldCenter(), true);
             currentState = State.JUMPING;
         }
+    }
+
+    public boolean timeUp() {
+        if (Hud.worldTimer <= 0)
+            mariaIsDead = true;
+        return mariaIsDead;
     }
 }
