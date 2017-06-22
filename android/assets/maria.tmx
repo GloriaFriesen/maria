@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.1" orientation="orthogonal" renderorder="right-down" width="42" height="600" tilewidth="16" tileheight="16" nextobjectid="102">
+<map version="1.0" tiledversion="1.0.1" orientation="orthogonal" renderorder="right-down" width="42" height="600" tilewidth="16" tileheight="16" nextobjectid="103">
  <tileset firstgid="1" source="untitled.tsx"/>
  <layer name="Tile Layer 1" width="42" height="600">
   <data encoding="base64" compression="zlib">
@@ -8,7 +8,7 @@
  </layer>
  <layer name="Tile Layer 2" width="42" height="600">
   <data encoding="base64" compression="zlib">
-   eJzt3dmRGzcQANBZlRSCjgx8JCJLGbnKSfhIxEcGPhKR7Awk+9Pwh3+wK2IANA5y36vCx+xBTu30NLoBLnkcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADckm/vjuO7NL5P44e7+8e7+DWdy29p/J7GH3f3j3fxIZ3LxzT+TuOfu/vHu/jsyXF8nsYXaXz55P7xrfnx6XH8lMbPafzydPXZfNq7dG7v0/gzjb82Ps/nz47jRRov03j1bPXZfNrrdG5fpfEmjbcbnydccnZezvNc73Gts/Nynud6j2udnZfzPNd7XOvsvJznud5joF5rni6Jrl9b83RJdP3amqdLouvX1jxdIi9zS3ZdX8rtur6U23V9KXfr60vEWt3HnrW6jz1rdR97lj72upnfY5nf4TrMzH099c7M3NdT78zMfT31zszcV6p3LsXBqLXJFpfiYNTaZItLcTBqbbLFpbp31NpktOj8OSqOo/PnqDiOzp+j4jg6f66OY2JF3MczarOI+3hGbRZxH8+ozSLuY30pcMmqvYNaq/YOaq3aO6gVsXew675Ubtd9qdyu+1I5+1JEaMkHK/bYWvLBij22lnwQ0cuUrkl+nVvyQUQvU7omu9QUpWuyS01RuibyPsy1siaveayVNXnNY62syWsea2VNLs/zn13XjnKj6ryzvcnZnxtV553tTc7+3Kj7/2xvMmo/5ux1OtubjNqP8XrOWPbNLnvseT7aLv18SVSej+5JRsVjdE8yKh6je5JR8Rjdk1xr37FLfJfsEt8lu8R3yWOJ7/+V4naX+6AUt7vcB6W43eU+KMVt730wKm6i9xZHxU10vzcqbqL7vVH582y/5/87Yz229YCovmd0PRjV94yuB6P6ntH1YFTfc+314LWY1W/1ziez+q3e+aT1/qr9+/TOJ633V+3fZ9X68mObb3O79Jslu/SbJbv0myWz1112fR18btfXwed2fR18btfXwfuci3ov0niZxqsHvrfb51y8SePtA1/f8XMuvlnztA/aJQ+X5Hl41/PO8/Au80cuz8O7zB8l19L/R79/5aj6Kfr9K0fVT9HvXzmqfop+/8pR9dO7xt+bXTc9b3yO2XXT68bnmF03tV733rqpNl+1Xvdetfmq9br3qs1XXy86z9p81RqftXrn21nx2TvfzorP3vl2Vnz6v31u2b9PMBEh
+   eJzt3MdxWzEQANAvjVSCQgcOjchSR55xEw6NOHTg0Ihsd+BwNHTwBSMRPywCqfdmcKBEkZj5i8Uu8cVpAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2C/vT6bpQxof0/h00ns2D7tNc/uexo80fg48z7PTaTpP4yKNy9Pes3nYVZrbizSu07gZeJ4QIc9zWx/Xkue5rY9ryfPc1se15Hlu62NguddH0/QmjbdpvDt6+HlL82x0Xv6c5vYlja9pfNsxz6V5Njov/0pz+53GnzT+7pjn0jwbnZefHE/T0zSepfH8+OHnLc2z8jKHZG5+7G1ufuxtbn7sbW5+hDv62Fj6WFqwv8eyvwO5XvXOUr3qnaV61TtLleqdiDhoEUsRcdAiliLioEUsRdS9h1Y7j5oTc6PmxNyoOTF3aHH82EWs4xZ9acQ6btGXRqzjFn1pxDrWlwK76KVjHUovPceo51K5Uc+lcqOeS+WcSxFhTT7occa2Jh/0OGNbkw8iepnSNcmv85p8ENHLlK7JKDVF6ZqMUlOUrom8D231rMmXvFbPmnzJa/WsyZe8Vs+aXJ7nzqifHeVq1Xlze5O5z6tV583tTeY+r9b6n9ub1DqPmXud5vYmtc5j3M8Zy7nZbo89z0cbpZ8vicrz0T1JrXiM7klqxWN0T1IrHqN7kn3tO0aJ75JR4rtklPgueSzx/V8pbkdZB6W4HWUdlOJ2lHVQitut66BW3ESfLdaKm+h+r1bcRPd7tfLn3H7P/3fGemyfB0T1PbXrwai+p3Y9GNX31K4Ho/qefa8H90WrfmvrftKq39q6n7Tqt7buJ63Wl8+X+xil3ywZpd8sGaXfLGn9ucuo98HnRr0PPjfqffC5Ue+Dz+uMUfvYvM7o2ceep3GRxuU9v8vrjN597HUaN/f8PK8zRqg7XvV523uNkodL8jw86rzzPDzK/pHL8/Ao+0fJvvT/0d9fWat+iv7+ylr1U/T3V9aqn6K/v7JW/XS78u9a101nK9+jdd10tfI9WtdNa6/71rppab5ae923Wpqv1l73rZbmq5ed5rk0X62Nz6W27ret4nPrftsqPrfut63i0//tc8j+AVaky54=
   </data>
  </layer>
  <objectgroup name="edge">
@@ -71,16 +71,9 @@
   <object id="64" x="479.5" y="8063.5" width="63" height="63"/>
   <object id="66" x="512.5" y="8336.5" width="63" height="63"/>
   <object id="70" x="543.5" y="7712.5" width="63" height="63"/>
-  <object id="71" x="112.5" y="7551.5" width="63" height="63"/>
-  <object id="72" x="112.5" y="7487.5" width="63" height="63"/>
-  <object id="76" x="112.5" y="7615.5" width="63" height="63"/>
   <object id="79" x="382.5" y="7360.5" width="63" height="63"/>
   <object id="84" x="382.5" y="7167.5" width="63" height="63"/>
-  <object id="87" x="318.5" y="6720.5" width="63" height="63"/>
-  <object id="88" x="96.5" y="6911.5" width="63" height="63"/>
-  <object id="89" x="382.5" y="6720.5" width="63" height="63"/>
   <object id="100" x="511.5" y="7039.5" width="63" height="63"/>
-  <object id="101" x="64.5" y="8959.5" width="63" height="63"/>
  </objectgroup>
  <objectgroup name="ground">
   <object id="35" x="-1" y="9534" width="671" height="64"/>
