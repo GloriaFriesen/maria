@@ -35,9 +35,13 @@ public class GameOverScreen implements Screen {
 
         Label whoopsLabel = new Label("Whoops.", font);
         Label outOfTime = new Label("You ran out of time.", font);
+        Label playAgainLabel = new Label("Click to Play Again.", font);
+
         table.add(whoopsLabel).expandX();
         table.row();
         table.add(outOfTime).expandX();
+        table.row();
+        table.add(playAgainLabel).expandX().padTop(40);
 
         stage.addActor(table);
     }
@@ -49,6 +53,10 @@ public class GameOverScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        if(Gdx.input.justTouched()) {
+            game.setScreen(new PlayScreen((Maria) game));
+            dispose();
+        }
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.draw();
@@ -76,6 +84,6 @@ public class GameOverScreen implements Screen {
 
     @Override
     public void dispose() {
-
+        stage.dispose();
     }
 }
