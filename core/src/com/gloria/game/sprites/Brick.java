@@ -7,6 +7,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.physics.box2d.World;
 import com.gloria.game.Maria;
+import com.gloria.game.scenes.Hud;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,6 @@ public class Brick extends InteractiveTileObject {
         for (TiledMapTileLayer.Cell brick : brickCells) {
             brick.setTile(null);
         }
-
+        Hud.addScore(500);
     }
 }
