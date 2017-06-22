@@ -17,7 +17,7 @@
   <object id="44" x="669" y="1.5" width="1" height="9005"/>
   <object id="45" x="-0.5" y="0" height="9598"/>
  </objectgroup>
- <objectgroup name="steps">
+ <objectgroup name="steps" visible="0">
   <object id="4" x="0" y="9231" width="62" height="127"/>
   <object id="19" x="415" y="9471.5" width="255" height="63"/>
   <object id="20" x="480" y="9408.5" width="62" height="63"/>
@@ -64,7 +64,7 @@
   <object id="119" x="-0.5" y="6399.5" width="63" height="63"/>
   <object id="120" x="382.5" y="6399.5" width="255" height="63"/>
  </objectgroup>
- <objectgroup name="brick">
+ <objectgroup name="brick" visible="0">
   <object id="26" x="128" y="9135" width="63" height="63"/>
   <object id="29" x="191.5" y="9135.5" width="63" height="63"/>
   <object id="30" x="255.5" y="8928.5" width="63" height="63"/>
