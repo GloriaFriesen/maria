@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="untitled.tsx"/>
  <layer name="Tile Layer 1" width="42" height="600">
   <data encoding="base64" compression="zlib">
-   eJzt2jtuU1EUBVBHkcAFJT2feQSYQoCWMfCp6ANpGQOfiTAGPrMIIDEBjotI0VaIFQnwfmEVu9ivurpn6dh+8sn11erb5Pvkx+SkpB/sr1b3JvcnDya31qvV7cmdyd11T386Z3s2eT55MTmcZw8njyaP1z397Zzt3eT95MPkaJ69mryeHK97+qc52+fJl8nX/R6PfPLJJ5988tngkU8++eSTTz4bPPLJJ5988slng0c++eSTTz75bPDIJ5988sknnw0e+eSTTz755LPBI5988sknn3w2eOSTTz755JPPBo988sknn3zy2eCRTz755JNPPhs88sknn3zyyWeDRz755JNPPvls8Mgnn3zyySefDR755JNPPvnks8Fj9px7i8fsOfcWj9lz7i0es+deavHIJ5988sknnw0e+eSTTz755LPBI5988sknn3w2eOSTTz755JPPBo988sknn3zy2eCRTz755JNPPhs88sknn3zyyWeDRz755JNPPvls8Mgnn3zyySefDR755JNPPvnks8Ejn3zyySeffDZ4XKrPnHuLx+w59xaP2XPuLR6z515q8cgnn3zyySefDR755JNPPvnks8Ejn3zyySeffDZ45JNPPvnkk88Gj3zyySeffPLZ4JFPPvnkk08+GzzyySeffPLJZ4NHPvnkk08++WzwyCeffPLJJ58NHvnkk08++eSzwSOffPLJJ598Nnjkk08++eSTzwaPfPLJJ5988tngkU8++eSTTz4bPPLJJ5988slng0c++eSTTz75bPDIJ5988sknnw0e+eSTTz755LPBI5988sknn3w2eFyqz5x7i8fsOfcWj9lz7i0es+deavHIJ5988sknnw0e+eSTTz755LPBI5988sknn3w2eOSTTz755PP/8plzb/GYPefe4jF7zr3FY/bcSy0e+eSTTz7bfebcWzxmz7m3eMyec2/xmD33UotH+9P+XNL+9P/PP9v9P5lPPvnctUc++eSTTz75bPDIJ5988tnu82y/udfjcanvP72f936eTz537ZFPPvnkk08+Gzzy+e/6SZHHi/omLR4v6gfFPs/2l8W/3/n8e31zzgZ/2/rmnA3+tvXTO921v239sMTftn5U4m8JPjdn4JPP0573umufv+t5rw3+zut5zw3+zutn7/kyn+839vi8Sj4382zweJHP4yKPfNqfl/G5657PWzxmP+97aoPH7Pm8xWP2fN7i8ar4fHJtGXmzkHxcSH4uJL8ArL046g==
+   eJzt0rdNRAEQRdEvkEgwHWKaWKALTBOYLjBNYLrAxEy42gb2Cp3gavQmPqudZTmfLqbLaRXdd9P99DA9hvfb9D59TJ/hvb+7LAfT4XS0290Vf3zyySeffPJZ8Mcnn3zyySefBX988sknn3zyWfDHJ5988sknnwV/fPLJJ5988lnwxyeffPLJJ58Ff3zyySeffPJZ8Mcnn3zyySefBX988sknn3zyWfDHJ5988sknnwV/fPLJJ5988lnwxyeffPLJJ58Ff3zyySeffPJZ8Mcnn3zyySefBX988sknn3zyWfDHJ5988sknnwV/fPLJJ5988lnwxyeffPLJJ58Ff3zyySeffPJZ8Mcnn3zyySefBX988sknn3zyWfDHJ5988sknnwV/fPLJJ5988lnwxyeffPLJJ58Ff3zyySeffPJZ8Mcnn3zyySefBX988sknn3zyWfDHJ5988sknnwV/fPLJJ5988lnwxyeffPLJJ58Ff3zyySeffPJZ8Mcnn3zyySefBX988sknn3zyWfDHJ5988sknnwV/fPLJJ5988lnwxyeffPLJJ58Ff3zyySeffPJZ8Mcnn3zyySefBX988sknn3zyWfDHJ5988sknnwV/fPLJJ5988lnwxyeffPLJJ58Ff3zyySeffPJZ8Mcnn3zyySefBX988sknn3zyWfDHJ5988sknnwV/fPLJJ5988lnwxyeffPLJJ58Ff3zyySeffPJZ8Mcnn3zyySefBX988sknn3zyWfDHJ5988sknnwV/fPLJJ5988lnwxyeffPLJJ58Ff3zyySeffPJZ8Mcnn3zyySefBX988sknn3zyWfDHJ5988sknnwV/fPLJJ5988lnw9198Hu8ty8l0Op2t3c3/tvfVdD3dTLdrd/O/7f00PU8v0+va3fxve39N39PP9Lt2N//b3n/Ha8Qp
   </data>
  </layer>
  <layer name="Tile Layer 2" width="42" height="600">
@@ -78,7 +78,7 @@
   <object id="88" x="96.5" y="6911.5" width="63" height="63"/>
   <object id="89" x="382.5" y="6720.5" width="63" height="63"/>
  </objectgroup>
- <objectgroup name="ground" visible="0">
+ <objectgroup name="ground">
   <object id="35" x="-1" y="9534" width="671" height="64"/>
  </objectgroup>
 </map>
