@@ -8,7 +8,7 @@
  </layer>
  <layer name="Tile Layer 2" width="42" height="600">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <objectgroup name="edge">
@@ -24,12 +24,11 @@
   <object id="23" x="544" y="9199.5" width="126" height="63"/>
   <object id="24" x="192" y="9070.5" width="191" height="63"/>
   <object id="25" x="64" y="9294.5" width="383" height="63"/>
-  <object id="46" x="448" y="8927.5" width="62" height="63"/>
+  <object id="46" x="448" y="8927.5" width="127" height="63"/>
   <object id="47" x="128" y="8832.5" width="255" height="63"/>
   <object id="48" x="0" y="8720.5" width="62" height="63"/>
   <object id="50" x="193" y="8719.5" width="62" height="63"/>
-  <object id="52" x="464" y="8655.5" width="62" height="63"/>
-  <object id="53" x="607" y="8655.5" width="62" height="63"/>
+  <object id="53" x="481" y="8655.5" width="188" height="63"/>
   <object id="54" x="288" y="8512.5" width="190" height="63"/>
   <object id="55" x="1" y="8319.5" width="62" height="63"/>
   <object id="56" x="113" y="8208.5" width="253" height="63"/>
@@ -58,7 +57,6 @@
   <object id="112" x="255.5" y="6591.5" width="63" height="63"/>
   <object id="119" x="-0.5" y="6399.5" width="63" height="63"/>
   <object id="120" x="382.5" y="6399.5" width="255" height="63"/>
-  <object id="121" x="608" y="8831.5" width="62" height="63"/>
  </objectgroup>
  <objectgroup name="brick" visible="0">
   <object id="26" x="128" y="9135" width="63" height="63"/>
